@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import ModalC from "./ModalC";
+import "./Styles.css";
 
 const ModalA = ({ show, handleClose, switchingModalsB, contacts }) => {
   const [checked, setChecked] = useState(false);
@@ -35,15 +36,15 @@ const ModalA = ({ show, handleClose, switchingModalsB, contacts }) => {
         </Modal.Header>
         <Modal.Body>
           {contactsValue?.map((contact) => (
-            <div key={contact.id}>
-              <p
+            <ul key={contact.id} className="contacts">
+              <li
                 onClick={() => handleShowModalC(contact)}
                 style={{ cursor: "pointer" }}
               >
                 <strong className="font-weight-bold">ID-{contact?.id}: </strong>
                 {contact?.phone}
-              </p>
-            </div>
+              </li>
+            </ul>
           ))}
         </Modal.Body>
         <Modal.Footer>

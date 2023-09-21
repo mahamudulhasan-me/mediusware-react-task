@@ -1,0 +1,7 @@
+.contacts li {
+  list-style-type: none;
+  padding: 0.5rem;
+}
+.contacts li:hover {
+  background-color: #7fffdf;
+}
